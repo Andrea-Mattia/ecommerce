@@ -36,6 +36,15 @@ export class OrdineService {
       );
   }
 
+  updateOrdine(ordine: Ordine): Observable<any> {
+    return this._http
+      .put(this.baseUrl + '/updateordine', ordine, this.httpOptions)
+      .pipe(
+        map((response) => response),
+        catchError(this.errorHandler<any>('Update ordine'))
+      );
+  }
+
   deleteOrdine(id: number): Observable<any> {
     return this._http
       .delete(this.baseUrl + '/deleteordine/' + id, this.httpOptions)

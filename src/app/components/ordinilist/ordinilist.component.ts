@@ -27,6 +27,11 @@ export class OrdinilistComponent implements OnInit {
     this._router.navigate(['/form']);
   }
 
+  updateOrdine(ordine: Ordine) {
+    this._ordineService.setter(ordine);
+    this._router.navigate(['/form']);
+  }
+
   deleteOrdine(ordine: Ordine) {
     this._ordineService.deleteOrdine(ordine.idOrdine).subscribe((dati: any) => {
       this.ordini.splice(this.ordini.indexOf(ordine), 1);
