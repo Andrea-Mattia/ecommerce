@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="page-header">
+    <h3>Lista ordini</h3>
+  </div>
+  <table class="table table-striped" style="margin-top: 50px0">
+    <thead>
+      <th>ID</th>
+      <th>Data</th>
+      <th>Indirizzo</th>
+      <th>Totale</th>
+      <th>ID Cliente</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let o of ordini">
+        <td>{{ o.idOrdine }}</td>
+        <td>{{ o.data }}</td>
+        <td>{{ o.indirizzo }}</td>
+        <td>{{ o.totale }}</td>
+        <td>{{ o.idCliente }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteOrdine(o)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    class="btn btn-primary"
+    style="margin-top: 50px"
+    (click)="createOrdine()"
+  >
+    Nuovo Ordine
+  </button>
+</div>
