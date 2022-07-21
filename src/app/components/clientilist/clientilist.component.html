@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="page-header">
+    <h3>Lista clienti</h3>
+  </div>
+  <table class="table table-striped" style="margin-top: 50px0">
+    <thead>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Cognome</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Email</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of clienti">
+        <td>{{ c.id }}</td>
+        <td>{{ c.nome }}</td>
+        <td>{{ c.cognome }}</td>
+        <td>{{ c.username }}</td>
+        <td>{{ c.password }}</td>
+        <td>{{ c.email }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="updateCliente(c)">
+            Update
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteCliente(c)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    class="btn btn-primary"
+    style="margin-top: 50px"
+    (click)="createCliente()"
+  >
+    Nuovo Cliente
+  </button>
+</div>
