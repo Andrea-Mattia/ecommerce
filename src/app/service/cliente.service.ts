@@ -9,7 +9,7 @@ import { Cliente } from '../models/cliente';
 export class ClienteService {
   private cliente!: Cliente;
   private baseUrl: string =
-    'http://127.0.0.1:8080/WebService/api/clienteservice';
+    'http://127.0.0.1:8080/ecommerce/api/clienteservice';
   private httpOptions = {
     headers: new HttpHeaders({
       'Access-Control-Allow-Origin': '*',

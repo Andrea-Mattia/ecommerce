@@ -8,8 +8,7 @@ import { Ordine } from '../models/ordine';
 })
 export class OrdineService {
   private ordine!: Ordine;
-  private baseUrl: string =
-    'http://127.0.0.1:8080/WebService/api/ordineservice';
+  private baseUrl: string = 'http://127.0.0.1:8080/ecommerce/api/ordineservice';
   private httpOptions = {
     headers: new HttpHeaders({
       'Access-Control-Allow-Origin': '*',
